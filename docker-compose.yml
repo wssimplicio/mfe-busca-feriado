@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  busca-feriado-app:
+    container_name: mfe-feriado-cep
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4202:4202"
+    networks:
+      - mfe-host_mfehost-net
+
+networks:
+  mfe-host_mfehost-net:
+    external: true
+
